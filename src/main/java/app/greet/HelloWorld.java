@@ -29,13 +29,13 @@ public class HelloWorld {
         List<String> names = new ArrayList<>();
 
 
-        get("/hello/:name", (req, res) -> {
-           String aname =req.params(":name");
-            return  "Hello "+ aname;
-        });
+//        get("/hello/:name", (req, res) -> {
+//           String aname =req.params(":name");
+//            return  "Hello "+ aname;
+//        });
 
 
-        get("/app/greet", (req, res) -> {
+        get("/", (req, res) -> {
             Map<String, String> dataMap = new HashMap<>();
 //            String name = req.params(":name");
 
