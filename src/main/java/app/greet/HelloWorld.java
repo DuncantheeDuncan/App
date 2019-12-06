@@ -20,7 +20,8 @@ public class HelloWorld {
     }
 
     public static void main(String[] args) {
-//port(8080);
+        Greeter greet = new Greeter();
+
         staticFiles.location("/public");
 
         port(getHerokuAssignedPort());
@@ -37,10 +38,19 @@ public class HelloWorld {
 
         get("/", (req, res) -> {
             Map<String, String> dataMap = new HashMap<>();
-//            String name = req.params(":name");
+
+            dataMap.put("counter",greet.getCount().toString());
+            return new ModelAndView(dataMap, "index.handlebars");
+
+        }, new HandlebarsTemplateEngine());
 
 
-            dataMap.put("Name", "Jack");
+        post("/greet", (req, res) -> {
+            Map<String, String> dataMap = new HashMap<>();
+            String name = req.params("name_box");
+
+
+            dataMap.put("Name", name + " jj");
             names.add(String.valueOf(dataMap));
 
             System.out.println(dataMap + " " );

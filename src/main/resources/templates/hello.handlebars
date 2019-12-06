@@ -1,6 +1,13 @@
 <h1>Greet me</h1>
 Hello, {{Name}}
-<!--Hello, {{name}}-->
+
+<form method="post" action="/greet">
+    <input type="text" name="name_box">
+    <!--    <input type="text" name="surname">-->
+<!---->
+    <input type="submit" value="greet" >
+</form>
+
 <div>
     <a href="/">back</a>
 </div>

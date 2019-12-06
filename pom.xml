@@ -24,7 +24,7 @@
                 <version>2.0.13</version>
 
                 <configuration>
-<!--                    <appName>phumlani-app</appName>-->
+
                     <processTypes>
                         <web>java $JAVA_OPTS -cp target/classes:target/dependency/* app.greet.HelloWorld</web>
                     </processTypes>
