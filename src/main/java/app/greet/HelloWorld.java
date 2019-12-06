@@ -1,3 +1,4 @@
+package app.greet;
 
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -9,6 +10,7 @@ import java.util.Map;
 
 import static spark.Spark.*;
 public class HelloWorld {
+
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
@@ -19,8 +21,10 @@ public class HelloWorld {
 
     public static void main(String[] args) {
 //port(8080);
-        port(getHerokuAssignedPort());
         staticFiles.location("/public");
+
+        port(getHerokuAssignedPort());
+
 
         List<String> names = new ArrayList<>();
 
@@ -31,7 +35,7 @@ public class HelloWorld {
         });
 
 
-        get("/greet", (req, res) -> {
+        get("/app/greet", (req, res) -> {
             Map<String, String> dataMap = new HashMap<>();
 //            String name = req.params(":name");
 
