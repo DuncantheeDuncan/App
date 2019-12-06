@@ -24,9 +24,9 @@
                 <version>2.0.13</version>
 
                 <configuration>
-                    <appName>spark-phumlani</appName>
+                    <appName>phumlani-app</appName>
                     <processTypes>
-                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/ HelloWorld</web>
+                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* HelloWorld</web>
                     </processTypes>
                 </configuration>
 
